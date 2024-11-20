@@ -28,15 +28,15 @@ public class PasswordStrength {
         return feedbackMessages;
     }
 
-    public void merge(PasswordStrength passwordStrength){
-        score+=passwordStrength.score;
-        passwordStrength.feedbackMessages.stream().forEach(msg->feedbackMessages.add(msg));
+    public void merge(PasswordStrength passwordStrength) {
+        score += passwordStrength.score;
+        passwordStrength.feedbackMessages.stream().forEach(msg -> feedbackMessages.add(msg));
     }
 
 
-    public PassStrengthLevel calculateStrength(){
-        if(score<=5) return PassStrengthLevel.WEAK;
-        else if(score==6 || score==7) return PassStrengthLevel.MEDIUM;
+    public PassStrengthLevel calculateStrength() {
+        if (score <= 5) return PassStrengthLevel.WEAK;
+        else if (score == 6 || score == 7) return PassStrengthLevel.MEDIUM;
         else return PassStrengthLevel.STRONG;
     }
 
